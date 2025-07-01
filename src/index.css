@@ -1,13 +1,156 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.home-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #d1d0d2);
 }
+
+.home-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+.create-button {
+  background: white;
+  color: #4b0082;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.create-button:hover {
+  transform: scale(1.05);
+  background-color: #f3f3f3;
+}
+
+
+
+
+
+
+/* Whiteboard.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #f5f7fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.whiteboard-canvas {
+  position: absolute;
+  top: 60px; /* height of toolbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  cursor: crosshair;
+  background-color: white;
+  z-index: 1;
+}
+
+/* Toolbar Styling */
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Buttons */
+.toolbar button {
+  
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolbar button:hover {
+  background-color: #c7d2fe;
+  transform: scale(1.03);
+}
+
+.active-tool {
+  background-color: #4338ca !important;
+  color: white !important;
+}
+
+/* Labels and Inputs */
+.toolbar label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.toolbar input[type="color"] {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  
+}
+
+.toolbar input[type="range"] {
+  width: 100px;
+  cursor: pointer;
+}
+
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .toolbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  .toolbar button,
+  .toolbar input,
+  .toolbar label {
+    margin-top: 6px;
+  }
+}
+
